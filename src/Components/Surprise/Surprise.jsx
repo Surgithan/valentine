@@ -3,6 +3,7 @@ import confetti from 'canvas-confetti';
 
 const Surprise = () => {
     const [showSecondVideo, setShowSecondVideo] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
     const video1Ref = useRef(null);
     const video2Ref = useRef(null);
 
@@ -17,6 +18,10 @@ const Surprise = () => {
                 video2Ref.current.play();
             }
         }, 100);
+    };
+
+    const toggleMute = () => {
+        setIsMuted(!isMuted);
     };
 
     const triggerConfetti = () => {
@@ -98,13 +103,46 @@ const Surprise = () => {
                     boxShadow: '0 5px 20px rgba(0,0,0,0.15)',
                     border: '3px solid white'
                 }}>
+                    {/* Sound Control Button */}
+                    <button
+                        onClick={toggleMute}
+                        style={{
+                            position: 'absolute',
+                            top: '15px',
+                            right: '15px',
+                            zIndex: 10,
+                            background: 'rgba(255, 255, 255, 0.9)',
+                            border: '2px solid #ff69b4',
+                            borderRadius: '50%',
+                            width: '45px',
+                            height: '45px',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '1.2rem',
+                            boxShadow: '0 3px 10px rgba(0,0,0,0.2)',
+                            transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={e => {
+                            e.currentTarget.style.transform = 'scale(1.1)';
+                            e.currentTarget.style.boxShadow = '0 5px 15px rgba(255, 105, 180, 0.4)';
+                        }}
+                        onMouseLeave={e => {
+                            e.currentTarget.style.transform = 'scale(1)';
+                            e.currentTarget.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+                        }}
+                        title={isMuted ? 'Unmute' : 'Mute'}
+                    >
+                        {isMuted ? '🔇' : '🔊'}
+                    </button>
                     {/* First Video - Proposal Animation */}
                     {!showSecondVideo && (
                         <video
                             ref={video1Ref}
                             src="/Animated_Proposal_GIF_Created.mp4"
                             autoPlay
-                            muted
+                            muted={isMuted}
                             playsInline
                             onEnded={handleFirstVideoEnd}
                             style={{
@@ -122,7 +160,7 @@ const Surprise = () => {
                             ref={video2Ref}
                             src="/Bioluminescent_Rose_Scene_Generation.mp4"
                             loop
-                            muted
+                            muted={isMuted}
                             playsInline
                             style={{
                                 width: '100%',

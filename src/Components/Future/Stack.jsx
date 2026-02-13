@@ -50,7 +50,8 @@ export default function Stack({
     autoplayDelay = 3000,
     pauseOnHover = false,
     mobileClickOnly = false,
-    mobileBreakpoint = 768
+    mobileBreakpoint = 768,
+    onCardChange
 }) {
     const [isMobile, setIsMobile] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
@@ -129,6 +130,13 @@ export default function Stack({
             const index = newStack.findIndex(card => card.id === id);
             const [card] = newStack.splice(index, 1);
             newStack.unshift(card);
+
+            // Notify parent component about the new top card
+            if (onCardChange && newStack.length > 0) {
+                const newTopCard = newStack[newStack.length - 1];
+                onCardChange(newTopCard.id);
+            }
+
             return newStack;
         });
     };

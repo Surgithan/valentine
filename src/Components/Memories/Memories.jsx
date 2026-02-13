@@ -17,15 +17,22 @@ export default function Memories({ items = imageData.memories,
     const setY = useRef(null);
     const pos = useRef({ x: 0, y: 0 });
 
-    // Map the string/URL items to objects if they aren't already
+    // Map the items to ensure we have the data structure we need
     const data = useMemo(() => {
+        console.log('Memory items:', items);
         return items.map((item, index) => {
+            // If it's already an object with image property, use it directly
+            if (typeof item === 'object' && item !== null && item.image) {
+                console.log(`Memory ${index + 1}:`, item);
+                return item;
+            }
+            // Fallback for string paths (shouldn't happen with new JSON structure)
             if (typeof item === 'string') {
                 return {
                     image: item,
                     title: `Memory #${index + 1}`,
                     subtitle: 'Beautiful Moment',
-                    borderColor: index % 2 === 0 ? '#d6336c' : '#c2255c', // Pink/Red themes
+                    borderColor: index % 2 === 0 ? '#d6336c' : '#c2255c',
                     gradient: `linear-gradient(${135 + (index * 10)}deg, #faa2c1, #e64980)`,
                     handle: '❤️'
                 };
@@ -120,7 +127,7 @@ export default function Memories({ items = imageData.memories,
                             <footer className="chroma-info">
                                 <h3 className="name" style={{ margin: 0 }}>{c.title}</h3>
                                 {c.handle && <span className="handle">{c.handle}</span>}
-                                <p className="role" style={{ margin: 0, fontSize: '0.9em' }}>{c.subtitle}</p>
+                                <p className="role">{c.subtitle}</p>
                             </footer>
                         </article>
                     ))}

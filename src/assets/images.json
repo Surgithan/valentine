@@ -1,11 +1,53 @@
 {
     "memories": [
-        "/photos/memories1.jpeg",
-        "/photos/memories2.jpeg",
-        "/photos/memories3.jpeg",
-        "/photos/memories4.jpeg",
-        "/photos/memories5.jpeg",
-        "/photos/memories6.jpeg"
+        {
+            "image": "/photos/memories1.jpeg",
+            "title": "Memory #1",
+            "subtitle": "From this moment, everything changed for the better. ❤️",
+            "borderColor": "#d6336c",
+            "gradient": "linear-gradient(135deg, #faa2c1, #e64980)",
+            "handle": "✨"
+        },
+        {
+            "image": "/photos/memories2.jpeg",
+            "title": "Memory #2",
+            "subtitle": "Our first adventure in a city full of life, and you were the only one I saw. ❤️",
+            "borderColor": "#c2255c",
+            "gradient": "linear-gradient(145deg, #faa2c1, #e64980)",
+            "handle": "🏙️"
+        },
+        {
+            "image": "/photos/memories3.jpeg",
+            "title": "Memory #3",
+            "subtitle": "It wasn't just a bus ride—it was the first journey of our lifelong trip together. ❤️",
+            "borderColor": "#d6336c",
+            "gradient": "linear-gradient(155deg, #faa2c1, #e64980)",
+            "handle": "🚌"
+        },
+        {
+            "image": "/photos/memories4.jpeg",
+            "title": "Memory #4",
+            "subtitle": "First train, countless destinations. Our love has been the best journey since. ❤️",
+            "borderColor": "#c2255c",
+            "gradient": "linear-gradient(165deg, #faa2c1, #e64980)",
+            "handle": "🚂"
+        },
+        {
+            "image": "/photos/memories5.jpeg",
+            "title": "Memory #5",
+            "subtitle": "Every time I think of May 6, I smile. That day at NETA with you is one of my favorite memories. ❤️",
+            "borderColor": "#d6336c",
+            "gradient": "linear-gradient(175deg, #faa2c1, #e64980)",
+            "handle": "📅"
+        },
+        {
+            "image": "/photos/memories6.jpeg",
+            "title": "Memory #6",
+            "subtitle": "First meal together, and my heart's been full ever since. ❤️",
+            "borderColor": "#c2255c",
+            "gradient": "linear-gradient(185deg, #faa2c1, #e64980)",
+            "handle": "🍽️"
+        }
     ],
     "cards": [
         "/photos/card1.jpeg",

@@ -371,7 +371,7 @@ const PillNav = ({
                 </div>
 
                 <Link to="/leave" className="pill-leave desktop-only">
-                    LEAVE
+                    💔 
                 </Link>
 
                 <button
