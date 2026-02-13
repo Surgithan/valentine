@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "bun run build",
+    "build": "vite build",
     "predeploy": "bun run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite --port 0616",
