@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffebef;
+  /* Soft pink background */
+  font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  /* Let clicks pass through */
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -10vh;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  pointer-events: auto;
+  /* Enable interaction */
+}
+
+.love-quote {
+  font-size: 2rem;
+  color: #d6336c;
+  margin-bottom: 2rem;
+  padding: 0 20px;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.proposal-text {
+  font-size: 3rem;
+  color: #c2255c;
+  margin-bottom: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.buttons-container {
+  position: relative;
+  /* Context for absolute positioning of No button */
+  width: 100%;
+  height: 200px;
+  /* Give some space for movement */
+}
+
+.yes-btn {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #40c057;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.yes-btn:hover {
+  background-color: #2f9e44;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.no-btn {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #fa5252;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Smooth movement */
+  /* Position is handled inline in React */
+}

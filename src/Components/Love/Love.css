@@ -1,0 +1,165 @@
+.love-container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* Prevent the whole page from scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* content starts from top */
+    padding-top: 100px;
+    /* Fixed space at the top */
+    padding-bottom: 40px;
+    /* Explicit gap at the bottom */
+    box-sizing: border-box;
+}
+
+.love-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    /* Responsive width */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    color: #4a154b;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+
+    /* Internal Scrolling Logic */
+    flex: unset;
+    /* Don't stretch to full flex height */
+    height: 100%;
+    /* Fill available space */
+    max-height: 80vh;
+    /* Force a gap at the bottom */
+    overflow-y: auto;
+    /* Scroll inside this box */
+    margin-bottom: 0;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.love-content::-webkit-scrollbar {
+    display: none;
+}
+
+.love-title {
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.love-subtitle {
+    font-size: 1.2rem;
+    color: #862e9c;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.love-section {
+    margin-bottom: 30px;
+}
+
+.love-section h3 {
+    color: #c2255c;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffdeeb;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.love-section h4 {
+    color: #a61e4d;
+    font-size: 1.3rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.love-section p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.memory-block {
+    background-color: rgba(255, 240, 246, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 4px solid #faa2c1;
+}
+
+.love-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.love-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.love-list li::before {
+    content: '❤️';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-size: 0.8rem;
+}
+
+.love-footer {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 2px solid #ffdeeb;
+    padding-top: 40px;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #862e9c;
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.timeline p {
+    color: #495057;
+    font-weight: 500;
+}
+
+.final-wishes {
+    margin-top: 40px;
+    color: #f783ac;
+    font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+    .love-content {
+        padding: 20px;
+    }
+
+    .love-title {
+        font-size: 2rem;
+    }
+
+    .love-section h3 {
+        font-size: 1.5rem;
+    }
+}

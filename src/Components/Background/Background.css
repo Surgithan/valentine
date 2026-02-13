@@ -1,0 +1,27 @@
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #fff0f3;
+    /* Add base color to fill gaps */
+}
+
+/* Semi-transparent overlay to wash out the background images */
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 240, 243, 0.75);
+    /* Romantic pinkish-white overlay */
+    backdrop-filter: blur(2px);
+    /* Slight blur */
+    z-index: 2;
+    pointer-events: none;
+}
